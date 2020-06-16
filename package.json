@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --config ./webpack.config.js --mode development",
+    "lint": "eslint --ignore-path '.eslintignore' --ext .js,.jsx .",
+    "lintfix": "eslint --fix --ignore-path '.eslintignore' --ext .js,.jsx .",
     "test": "echo \"No test specified\" && exit 0"
   },
   "keywords": [],
@@ -21,6 +23,18 @@
     "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-react-hooks": "^4.0.4",
+    "prettier": "^2.0.5",
+    "prop-types": "^15.7.2",
     "react": "^16.13.0",
     "react-dom": "^16.13.0"
   }
