@@ -1,17 +1,34 @@
 import React, { useEffect, useState } from 'react'
-import {getAllPlants} from './api.js' 
+import { getAllPlants } from './api.js'
+import Plant from './Plant.jsx'
 
 const Plants = () => {
-  const [data, setPlants] = useState({plants: []})
+  const [plants, setPlants] = useState(undefined)
+  const [plant, showPlant] = useState(undefined)
 
-  useEffect(async () => {
-    const plants = await getAllPlants()
-    setPlants({plants: plants.data})
-  }, [setPlants])
+  useEffect(() => {
+    async function getPlants() {
+      const res = await getAllPlants()
+      setPlants(res)
+    }
+    getPlants()
+  }, [])
+
+  if (!plants) {
+    return null
+  }
 
   return (
     <div>
-    {data.plants.map(plant => <div> plant.scientific_name </div>)}
+      {plant && <Plant id={plant} />}
+
+      <div>
+        {plants.map(plant => (
+          <div onClick={() => showPlant(plant.id)}>
+            {plant.scientific_name} - {plant.common_name}
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
