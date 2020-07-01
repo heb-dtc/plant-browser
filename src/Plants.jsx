@@ -20,7 +20,7 @@ const Plants = () => {
 
   return (
     <div>
-      {plant && <Plant id={plant} />}
+      {plant && <section className="container"><Plant id={plant} /></section>}
 
       <div>
         {plants.map(plant => (

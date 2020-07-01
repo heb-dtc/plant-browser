@@ -1,8 +1,7 @@
-
 import React, { useEffect, useState } from 'react'
 import { getPlant } from './api.js'
 
-const Plant = (props) => {
+const Plant = props => {
   const [plant, setPlant] = useState(undefined)
 
   useEffect(() => {
@@ -18,8 +17,9 @@ const Plant = (props) => {
   }
 
   return (
-    <div>
-      {plant.scientific_name}
+    <div className="plant">
+      <img className="plant-img" src={plant.images[0] ? plant.images[0].url : null} alt="plant_image" />
+      <div className="plant-details">{plant.scientific_name}</div>
     </div>
   )
 }

@@ -1,0 +1,29 @@
+body {
+  background-color: #7fbf7f;
+}
+
+.container {
+ margin: 0 auto;
+ max-width: 100%;
+ width: 800px;
+}
+
+.plant {
+ display: flex;  
+ background-color: #fff;
+ border-radius: 5px;
+ max-height: 200px;
+}
+
+.plant-img {
+  flex: 1;
+  object-fit: cover;
+}
+
+.plant-img img {
+  max-width: 100%;
+}
+
+.plant-details {
+  flex: 2;
+}
